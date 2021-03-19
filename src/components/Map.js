@@ -6,15 +6,16 @@ import LocationInfoBox from "./LocationInfoBox";
 const Map = ({ eventData, center, zoom }) => {
   const [locationInfo, setLocationInfo] = useState(null);
 
-  // create marker for every event with ID of 8 (wildfire) at coordinates
+  // create marker for every event with coordinates
   const markers = eventData.map(ev => {
-    if (ev.categories[0].id) {
+    if (ev.geometries[0].coordinates[0] && ev.geometries[0].coordinates[1]) {
       return (
         <LocationMarker
+        key={ev.id}
           evId={ev.categories[0].id}
           lat={ev.geometries[0].coordinates[1]}
           lng={ev.geometries[0].coordinates[0]}
-          onClick={() => setLocationInfo({ id: ev.id, title: ev.title })}
+          onClick={() => setLocationInfo({ id: ev.id, title: ev.title, lat: ev.geometries[0].coordinates[1], lng: ev.geometries[0].coordinates[0] })}
         />
       );
     }
