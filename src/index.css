@@ -28,11 +28,49 @@ body {
   height: 100vh;
   position: relative;
 }
-
+/* ICONS */
 .location-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.location-icon.drought {
+
+}
+.location-icon.fire {
   color: red;
 }
+.location-icon.flood {
+
+}
+.location-icon.storm {
+
+}
+.location-icon.volcano {
+  color: brown;
+}
+.location-icon.water-color {
+
+}
+.location-icon.landslide {
+
+}
+.location-icon.ice {
+
+}
+.location-icon.earthquake {
+
+}
+.location-icon.temperature {
+
+}
+.location-icon.manmade {
+
+}
+.location-icon.other {
+
+}
+
+
 /* LOADER  */
 .loader {
   display: flex;

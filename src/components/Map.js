@@ -8,9 +8,10 @@ const Map = ({ eventData, center, zoom }) => {
 
   // create marker for every event with ID of 8 (wildfire) at coordinates
   const markers = eventData.map(ev => {
-    if (ev.categories[0].id === 8) {
+    if (ev.categories[0].id) {
       return (
         <LocationMarker
+          evId={ev.categories[0].id}
           lat={ev.geometries[0].coordinates[1]}
           lng={ev.geometries[0].coordinates[0]}
           onClick={() => setLocationInfo({ id: ev.id, title: ev.title })}
