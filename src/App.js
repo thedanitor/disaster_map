@@ -9,14 +9,14 @@ function App() {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      // setLoading(true);
+      setLoading(true);
       // fetch data from API
       const res = await fetch("https://eonet.sci.gsfc.nasa.gov/api/v2.1/events");
       // destructure to just get events array
       const { events } = await res.json();
 
       setEventData(events);
-      // setLoading(false);
+      setLoading(false);
     }
 
     fetchEvents();

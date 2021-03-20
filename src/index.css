@@ -34,42 +34,36 @@ body {
   cursor: pointer;
 }
 .location-icon.drought {
-
+  color: tan;
 }
 .location-icon.fire {
-  color: red;
+  color: crimson;
 }
 .location-icon.flood {
-
+color: midnightblue;
 }
 .location-icon.storm {
-
+  color: yellow;
 }
 .location-icon.volcano {
-  color: brown;
+  color: maroon;
 }
 .location-icon.water-color {
-
-}
-.location-icon.landslide {
-
-}
-.location-icon.ice {
-
+color: teal;
 }
 .location-icon.earthquake {
-
+  color: black;
+}
+.location-icon.snow {
+  color: cornflowerblue;
 }
 .location-icon.temperature {
-
+  color: orangered;
 }
-.location-icon.manmade {
-
+.location-icon:hover {
+  color: #222;
+  filter: brightness(2);
 }
-.location-icon.other {
-
-}
-
 
 /* LOADER  */
 .loader {

@@ -1,19 +1,19 @@
 https://eonet.sci.gsfc.nasa.gov/api/v2.1/events
 
-6 Drought
-7 Dust and Haze
-8 Wildfires
-9 Floods
-10 Severe Storms
+6 Drought           tan
+7 Dust and Haze     grey
+8 Wildfires         red
+9 Floods            midnightblue
+10 Severe Storms    yellow
 
-12 Volcanoes
-13 Water Color
-14 Landslides
-15 Sea and Lake Ice
-16 Earthquakes
-17 Snow
-18 Temperature Extremes
-19 Manmade
+12 Volcanoes        maroon
+13 Water Color      teal
+14 Landslides       NA
+15 Sea and Lake Ice NA
+16 Earthquakes      black
+17 Snow             white
+18 Temperature      orangered
+
 
 
 

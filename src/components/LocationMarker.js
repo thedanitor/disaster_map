@@ -9,6 +9,7 @@ import waterColorIcon from "@iconify/icons-mdi/water-alert";
 import landslideIcon from '@iconify-icons/openmoji/landslide';
 import icebergIcon from '@iconify-icons/openmoji/iceberg';
 import earthquakeIcon from '@iconify-icons/wi/earthquake';
+import snowIcon from '@iconify-icons/bi/snow';
 import temperatureIcon from '@iconify-icons/bi/thermometer-high';
 
 
@@ -54,12 +55,12 @@ const LocationMarker = ({ evId, lat, lng, onClick }) => {
       iconName = "location-icon earthquake";
       break;
     case 17:
-      iconType = temperatureIcon;
-      iconName = "location-icon temperature";
+      iconType = snowIcon;
+      iconName = "location-icon snow";
       break;
     case 18:
-      iconType = exclamationIcon;
-      iconName = "location-icon manmade";
+      iconType = temperatureIcon;
+      iconName = "location-icon temperature";
       break;
     default:
       iconType = exclamationIcon;
