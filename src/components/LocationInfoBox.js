@@ -1,4 +1,9 @@
-const LocationInfoBox = ({ info }) => {
+import { Icon } from '@iconify/react';
+import closeCircle from '@iconify-icons/mdi/close-circle';
+
+
+
+const LocationInfoBox = ({ info, closeInfoBox, setCloseInfoBox }) => {
     let latitude = info.lat;
     let longitude = info.lng;
     // change latitude to S or N
@@ -14,6 +19,10 @@ const LocationInfoBox = ({ info }) => {
         longitude = longitude + " °E";
     }
 
+    const toggleBox = () => {
+        closeInfoBox ? setCloseInfoBox(false) : setCloseInfoBox(true);
+    }
+
     return (
         <div className="location-info">
             <h2>Event Location Info</h2>
@@ -24,6 +33,7 @@ const LocationInfoBox = ({ info }) => {
                 <li>LONGITUDE: <strong>{ longitude }</strong></li>
                 <li><a href={info.learn} target="_blank" rel="noreferrer">Learn More</a></li>
             </ul>
+            <Icon icon={closeCircle} onClick={toggleBox} className="close-icon" />
         </div>
     )
 }
