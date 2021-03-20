@@ -6,21 +6,27 @@ import floodIcon from "@iconify-icons/bi/water";
 import stormIcon from "@iconify-icons/bi/tropical-storm";
 import volcanoIcon from "@iconify-icons/maki/volcano-11";
 import waterColorIcon from "@iconify/icons-mdi/water-alert";
-import landslideIcon from '@iconify-icons/openmoji/landslide';
-import icebergIcon from '@iconify-icons/openmoji/iceberg';
-import earthquakeIcon from '@iconify-icons/wi/earthquake';
-import snowIcon from '@iconify-icons/bi/snow';
-import temperatureIcon from '@iconify-icons/bi/thermometer-high';
+import landslideIcon from "@iconify-icons/openmoji/landslide";
+import icebergIcon from "@iconify-icons/openmoji/iceberg";
+import earthquakeIcon from "@iconify-icons/wi/earthquake";
+import snowIcon from "@iconify-icons/bi/snow";
+import temperatureIcon from "@iconify-icons/bi/thermometer-high";
+// import LocationInfoBox from "./LocationInfoBox";
 
-
-const LocationMarker = ({ evId, lat, lng, title, onClick, onMouseEnter }) => {
+const LocationMarker = ({
+  evId,
+  lat,
+  lng,
+  title,
+  onClick,
+}) => {
   let iconType;
   let iconName;
   let latitude = lat;
   let longitude = lng;
 
-   // change latitude to S or N
-   if (latitude < 0) {
+  // change latitude to S or N
+  if (latitude < 0) {
     latitude = latitude * -1 + " °S";
   } else {
     latitude = latitude + " °N";
@@ -83,7 +89,7 @@ const LocationMarker = ({ evId, lat, lng, title, onClick, onMouseEnter }) => {
   }
 
   return (
-    <div className="location-marker" onClick={onClick} onMouseEnter={onMouseEnter}>
+    <div className="location-marker" onClick={onClick}>
       <Icon icon={iconType} className={iconName} />
       <div className="location-hover-info">
       <h5>{title}</h5>

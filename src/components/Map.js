@@ -5,7 +5,7 @@ import LocationInfoBox from "./LocationInfoBox";
 
 const Map = ({ eventData, center, zoom }) => {
   const [locationInfo, setLocationInfo] = useState(null);
-  const [closeInfoBox, setCloseInfoBox] = useState(false);
+  const [openInfoBox, setOpenInfoBox] = useState(false);
 
   // create marker for every event that has same type of coordinates object
   const markers = eventData.map(ev => {
@@ -17,8 +17,10 @@ const Map = ({ eventData, center, zoom }) => {
           lat={ev.geometries[0].coordinates[1]}
           lng={ev.geometries[0].coordinates[0]}
           title={ev.title}
+          openInfoBox={openInfoBox}
+          setOpenInfoBox={setOpenInfoBox}
           onClick={() => {
-            setCloseInfoBox(false);
+            setOpenInfoBox(true);
             setLocationInfo({
               id: ev.id,
               title: ev.title,
@@ -26,12 +28,21 @@ const Map = ({ eventData, center, zoom }) => {
               lng: ev.geometries[0].coordinates[0],
               learn: ev.sources[0].url,
             });
-          }}   
+          }}
         />
       );
     }
     return null;
   });
+  //if locationInfo is not null and closeInfoBox is false, then show LocationInfoBox
+  const locationBox =
+    locationInfo && openInfoBox ? (
+      <LocationInfoBox
+        info={locationInfo}
+        openInfoBox={openInfoBox}
+        setOpenInfoBox={setOpenInfoBox}
+      />
+    ) : null;
   // return GoogleMapReact component with props
   return (
     <div className="map">
@@ -39,11 +50,11 @@ const Map = ({ eventData, center, zoom }) => {
         bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
         defaultCenter={center}
         defaultZoom={zoom}
+        className="google-map"
       >
         {markers}
       </GoogleMapReact>
-      {/* if locationInfo is not null, then show LocationInfoBox  */}
-      {locationInfo && !closeInfoBox ? <LocationInfoBox info={locationInfo} closeInfoBox={closeInfoBox} setCloseInfoBox={setCloseInfoBox}/> : null}
+      {locationBox}
     </div>
   );
 };

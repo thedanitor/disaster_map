@@ -28,6 +28,11 @@ body {
   height: 100vh;
   position: relative;
 }
+
+.google-map {
+  position: relative;
+}
+
 /* ICONS */
 .location-icon {
   font-size: 1.5rem;
@@ -83,7 +88,7 @@ color: teal;
 }
 /* LOCATION INFO BOX */
 .location-info {
-  position: absolute;
+  position: fixed;
   top: 80px;
   right: 50px;
   width: 400px;
@@ -93,6 +98,7 @@ color: teal;
   border-radius: 10px;
   font-size: 18px;
   color: #fff;
+  z-index: 10;
 }
 
 .location-info ul {
@@ -107,8 +113,8 @@ color: teal;
 /* LOCATION HOVER INFO */
 .location-hover-info {
   position: absolute;
-  top: -10px;
-  left: 30px;
+  top: -60px;
+  left: -40px;
   margin: 0;
   height: 50px;
   width: 100px;
