@@ -2,9 +2,11 @@ import { useState } from "react";
 import GoogleMapReact from "google-map-react";
 import LocationMarker from "./LocationMarker";
 import LocationInfoBox from "./LocationInfoBox";
+import LocationHoverInfoBox from "./LocationHoverInfoBox";
 
 const Map = ({ eventData, center, zoom }) => {
   const [locationInfo, setLocationInfo] = useState(null);
+  // const [locationHoverInfo, setLocationHoverInfo] = useState(null);
 
   // create marker for every event with coordinates
   const markers = eventData.map(ev => {
@@ -15,6 +17,13 @@ const Map = ({ eventData, center, zoom }) => {
           evId={ev.categories[0].id}
           lat={ev.geometries[0].coordinates[1]}
           lng={ev.geometries[0].coordinates[0]}
+          title={ev.title}
+          // onMouseEnter={() => setLocationHoverInfo({
+          //     lat: ev.geometries[0].coordinates[1],
+          //     lng: ev.geometries[0].coordinates[0],
+          //     title: ev.title,
+          // })
+          // }
           onClick={() =>
             setLocationInfo({
               id: ev.id,
@@ -41,6 +50,7 @@ const Map = ({ eventData, center, zoom }) => {
       </GoogleMapReact>
       {/* if locationInfo is not null, then show LocationInfoBox  */}
       {locationInfo && <LocationInfoBox info={locationInfo} />}
+      {/* {locationHoverInfo && <LocationHoverInfoBox info={locationHoverInfo} />} */}
     </div>
   );
 };

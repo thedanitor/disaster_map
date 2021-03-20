@@ -6,8 +6,8 @@ body {
 /* HEADER */
 .header {
   padding: 10px;
-  background-color: firebrick;
-  color: #fff;
+  background-color: teal;
+  color: #eee;
   position: fixed;
   top: 0;
   right: 0;
@@ -102,4 +102,36 @@ color: teal;
 
 .location-info li {
   padding: 5px 0;
+}
+
+/* LOCATION HOVER INFO */
+.location-hover-info {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  margin: 0;
+  height: 50px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+
+.location-marker:hover .location-hover-info {
+  background-color: rgba(0, 0, 0, 1);
+  display: block;
+}
+
+.location-hover-info h5 {
+  margin: 5px;
+}
+
+.location-hover-info h6 {
+  margin: 5px;
 }

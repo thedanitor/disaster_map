@@ -13,9 +13,24 @@ import snowIcon from '@iconify-icons/bi/snow';
 import temperatureIcon from '@iconify-icons/bi/thermometer-high';
 
 
-const LocationMarker = ({ evId, lat, lng, onClick }) => {
+const LocationMarker = ({ evId, lat, lng, title, onClick, onMouseEnter }) => {
   let iconType;
   let iconName;
+  let latitude = lat;
+  let longitude = lng;
+
+   // change latitude to S or N
+   if (latitude < 0) {
+    latitude = latitude * -1 + " °S";
+  } else {
+    latitude = latitude + " °N";
+  }
+  // change longitude to W or E
+  if (longitude < 0) {
+    longitude = longitude * -1 + " °W";
+  } else {
+    longitude = longitude + " °E";
+  }
 
   switch (evId) {
     case 6:
@@ -68,8 +83,14 @@ const LocationMarker = ({ evId, lat, lng, onClick }) => {
   }
 
   return (
-    <div className="location-marker" onClick={onClick}>
+    <div className="location-marker" onClick={onClick} onMouseEnter={onMouseEnter}>
       <Icon icon={iconType} className={iconName} />
+      <div className="location-hover-info">
+      <h5>{title}</h5>
+      <h6>
+        {latitude} {longitude}
+      </h6>
+      </div>
     </div>
   );
 };
