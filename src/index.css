@@ -142,8 +142,8 @@ color: teal;
 }
 
 .location-info a:hover {
-  color: teal;
-  border-color: teal;
+  color: forestgreen;
+  border-color: forestgreen;
 }
 
 .location-info .close-icon {
@@ -156,7 +156,7 @@ color: teal;
 }
 
 .location-info .close-icon:hover {
-  color: teal;
+  color: forestgreen;
 }
 
 /* LOCATION HOVER INFO */
@@ -190,4 +190,39 @@ color: teal;
 .location-hover-info h5 {
   margin: 5px;
   display: block;
+}
+
+/* SELECTOR */
+.selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(to right, rgb(241, 39, 17), rgb(245, 175, 25));
+  color: #eee;
+  position: fixed;
+  top: 75px;
+  left: 10px;
+  box-shadow: 20px 20px 20px rgba(243, 112, 21, 0.8), 20px 20px 25px rgba(44, 83, 100, 0.8);
+  z-index: 50;
+  border-radius: 10px;
+}
+
+.disasters {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.disaster-input {
+  display: flex;
+  justify-content: flex-start;
+  text-align: start;
+  align-items: center;
+  padding: 10px;
+  color: #eee;
+}
+
+.disaster-label {
+  text-align: start;
 }

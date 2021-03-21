@@ -1,5 +1,7 @@
 https://eonet.sci.gsfc.nasa.gov/api/v2.1/events
 
+https://eonet.sci.gsfc.nasa.gov/docs/v3
+
 6 Drought           tan
 7 Dust and Haze     grey
 8 Wildfires         red
