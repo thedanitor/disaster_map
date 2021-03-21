@@ -92,10 +92,11 @@ const LocationMarker = ({
     <div className="location-marker" onClick={onClick}>
       <Icon icon={iconType} className={iconName} />
       <div className="location-hover-info">
-      <h5>{title}</h5>
-      <h6>
+      <h4>{title}</h4>
+      <h5>
         {latitude} {longitude}
-      </h6>
+      </h5>
+      <p>Click Icon for more info</p>
       </div>
     </div>
   );

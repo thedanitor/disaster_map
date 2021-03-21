@@ -5,21 +5,38 @@ body {
 }
 /* HEADER */
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
-  background-color: teal;
+  background: linear-gradient(to right, rgb(241, 39, 17), rgb(245, 175, 25));
   color: #eee;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  box-shadow: 0 20px 20px rgba(243, 112, 21, 0.8), 0 20px 25px rgba(44, 83, 100, 0.8);
   z-index: 100;
 }
 
 .header h1 {
   font-size: 25px;
   padding: 0;
-  margin: 0;
+  margin: 0 100px 0 0;
   text-align: center;
+}
+
+.header span {
+  position: absolute;
+  right: 155px;
+}
+
+.header .nasa-icon {
+  position: absolute;
+  right: 100px;
+  display: inline-block;
+ height: 3rem;
+ width: 3rem;
 }
 
 /* MAP  */
@@ -37,6 +54,7 @@ body {
 .location-icon {
   font-size: 1.5rem;
   cursor: pointer;
+  transform: translate(-50%, -50%);
 }
 .location-icon.drought {
   color: tan;
@@ -88,15 +106,17 @@ color: teal;
 }
 /* LOCATION INFO BOX */
 .location-info {
-  position: fixed;
-  top: 80px;
-  right: 50px;
-  width: 400px;
+  position: absolute;
+  top: 30vh;
+  left: calc(50vw - 150px);
+  width: 300px;
   min-height: 200px;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to right, rgba(241, 39, 17, 0.8), rgba(245, 175, 25, 0.8));
+  box-shadow: 20px 20px 20px rgba(44, 83, 100, 0.8), -20px 20px 20px rgba(44, 83, 100, 0.8);
   border-radius: 10px;
-  font-size: 18px;
   color: #fff;
   z-index: 10;
 }
@@ -110,19 +130,48 @@ color: teal;
   padding: 5px 0;
 }
 
+.location-info a {
+  display: block;
+  text-decoration: none;
+  color: yellow;
+  cursor: pointer;
+  padding: 5px 90px;
+  border: 2px solid yellow;
+  margin-top: 10px;
+  transition: all 0.3s ease-in;
+}
+
+.location-info a:hover {
+  color: teal;
+  border-color: teal;
+}
+
+.location-info .close-icon {
+  position: absolute;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: yellow;
+  transition: all 0.3s ease-in;
+}
+
+.location-info .close-icon:hover {
+  color: teal;
+}
+
 /* LOCATION HOVER INFO */
 .location-hover-info {
   position: absolute;
-  top: -60px;
+  bottom: 0px;
   left: -40px;
   margin: 0;
-  height: 50px;
-  width: 100px;
+  min-height: 50px;
+  width: 120px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to right, rgba(241, 39, 17, 0.8), rgba(245, 175, 25, 0.8));
   color: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -130,14 +179,15 @@ color: teal;
 }
 
 .location-marker:hover .location-hover-info {
-  background-color: rgba(0, 0, 0, 1);
+  display: block;
+}
+
+.location-hover-info h4 {
+  margin: 5px;
   display: block;
 }
 
 .location-hover-info h5 {
   margin: 5px;
-}
-
-.location-hover-info h6 {
-  margin: 5px;
+  display: block;
 }
