@@ -17,6 +17,10 @@ body {
   left: 0;
   box-shadow: 0 20px 20px rgba(243, 112, 21, 0.8), 0 20px 25px rgba(44, 83, 100, 0.8);
   z-index: 100;
+
+  background-size: 150% 120%;
+  animation: gradient 5s ease infinite;
+
 }
 
 .header h1 {
@@ -119,6 +123,8 @@ color: teal;
   border-radius: 10px;
   color: #fff;
   z-index: 10;
+  background-size: 150% 150%;
+  animation: gradient 5s ease infinite;
 }
 
 .location-info ul {
@@ -200,6 +206,7 @@ color: teal;
   align-items: center;
   padding: 10px;
   background: linear-gradient(to right, rgb(241, 39, 17), rgb(245, 175, 25));
+  
   color: #eee;
   position: fixed;
   top: 75px;
@@ -207,6 +214,19 @@ color: teal;
   box-shadow: 20px 20px 20px rgba(243, 112, 21, 0.8), 20px 20px 25px rgba(44, 83, 100, 0.8);
   z-index: 50;
   border-radius: 10px;
+  
+}
+
+@keyframes gradient {
+  0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .disasters {
