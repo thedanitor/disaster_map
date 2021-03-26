@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import { Icon } from "@iconify/react";
 import exclamationIcon from "@iconify-icons/bi/exclamation-triangle-fill";
 import droughtIcon from "@iconify-icons/mdi/water-off-outline";
@@ -13,13 +15,7 @@ import snowIcon from "@iconify-icons/bi/snow";
 import temperatureIcon from "@iconify-icons/bi/thermometer-high";
 // import LocationInfoBox from "./LocationInfoBox";
 
-const LocationMarker = ({
-  evId,
-  lat,
-  lng,
-  title,
-  onClick,
-}) => {
+const LocationMarker = ({ evId, lat, lng, title, onClick, isChecked, typeFilter, checkIds }) => {
   let iconType;
   let iconName;
   let latitude = lat;
@@ -37,66 +33,78 @@ const LocationMarker = ({
   } else {
     longitude = longitude + " °E";
   }
+  
+  // checkIds(typeFilter, evId);
+  // useEffect(() => {
+    
+  //   if (typeFilter === evId) {
+  //     console.log("evID" + evId)
+      switch (evId) {
+        case 6:
+          iconType = droughtIcon;
+          iconName = "location-icon drought";
+          break;
+        case 8:
+          iconType = fireIcon;
+          iconName = "location-icon fire";
+          break;
+        case 9:
+          iconType = floodIcon;
+          iconName = "location-icon flood";
+          break;
+        case 10:
+          iconType = stormIcon;
+          iconName = "location-icon storm";
+          break;
+        case 12:
+          iconType = volcanoIcon;
+          iconName = "location-icon volcano";
+          break;
+        case 13:
+          iconType = waterColorIcon;
+          iconName = "location-icon water-color";
+          break;
+        case 14:
+          iconType = landslideIcon;
+          iconName = "location-icon landslide";
+          break;
+        case 15:
+          iconType = icebergIcon;
+          iconName = "location-icon ice";
+          break;
+        case 16:
+          iconType = earthquakeIcon;
+          iconName = "location-icon earthquake";
+          break;
+        case 17:
+          iconType = snowIcon;
+          iconName = "location-icon snow";
+          break;
+        case 18:
+          iconType = temperatureIcon;
+          iconName = "location-icon temperature";
+          break;
+        case 19:
+          iconType = exclamationIcon;
+          iconName = "location-icon other";
+          break;
+        default:
+          iconType = null;
+          iconName = "location-icon hidden";
+      }
+    // }
+  // })
 
-  switch (evId) {
-    case 6:
-      iconType = droughtIcon;
-      iconName = "location-icon drought";
-      break;
-    case 8:
-      iconType = fireIcon;
-      iconName = "location-icon fire";
-      break;
-    case 9:
-      iconType = floodIcon;
-      iconName = "location-icon flood";
-      break;
-    case 10:
-      iconType = stormIcon;
-      iconName = "location-icon storm";
-      break;
-    case 12:
-      iconType = volcanoIcon;
-      iconName = "location-icon volcano";
-      break;
-    case 13:
-      iconType = waterColorIcon;
-      iconName = "location-icon water-color";
-      break;
-    case 14:
-      iconType = landslideIcon;
-      iconName = "location-icon landslide";
-      break;
-    case 15:
-      iconType = icebergIcon;
-      iconName = "location-icon ice";
-      break;
-    case 16:
-      iconType = earthquakeIcon;
-      iconName = "location-icon earthquake";
-      break;
-    case 17:
-      iconType = snowIcon;
-      iconName = "location-icon snow";
-      break;
-    case 18:
-      iconType = temperatureIcon;
-      iconName = "location-icon temperature";
-      break;
-    default:
-      iconType = exclamationIcon;
-      iconName = "location-icon other";
-  }
 
   return (
     <div className="location-marker" onClick={onClick}>
       <Icon icon={iconType} className={iconName} />
       <div className="location-hover-info">
-      <h4>{title}</h4>
-      <h5>
-        {latitude} {longitude}
-      </h5>
-      <p>Click Icon for more info</p>
+        <h4>{title}</h4>
+        <h5>
+          {latitude} {longitude}
+        </h5>
+        <p>Click Icon for more info</p>
       </div>
     </div>
   );
