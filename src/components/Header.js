@@ -1,7 +1,6 @@
 import { Icon } from "@iconify/react";
 import nasaIcon from '@iconify-icons/simple-icons/nasa';
 
-
 const Header = () => {
     return (
         <header className="header">

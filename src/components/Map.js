@@ -2,99 +2,76 @@ import { useState } from "react";
 import GoogleMapReact from "google-map-react";
 import LocationMarker from "./LocationMarker";
 import LocationInfoBox from "./LocationInfoBox";
-// import DisasterSelector from "./DisasterSelector";
 
 const Map = ({ eventData, center, zoom, typeFilter, checkIds }) => {
   const [locationInfo, setLocationInfo] = useState(null);
   const [openInfoBox, setOpenInfoBox] = useState(false);
 
-  // create marker for every event that has same type of coordinates object
+  // create marker for events
   const markers = eventData.map(ev => {
-        if (typeFilter && (ev.geometries[0].coordinates[0] && ev.geometries[0].coordinates[1])) {
-            if (typeFilter == (ev.categories[0].id)) {
-              return (
-                <LocationMarker
-                  key={ev.id}
-                  evId={ev.categories[0].id}
-                  lat={ev.geometries[0].coordinates[1]}
-                  lng={ev.geometries[0].coordinates[0]}
-                  title={ev.title}
-                  typeFilter={typeFilter}
-                  checkIds={checkIds}
-                  openInfoBox={openInfoBox}
-                  setOpenInfoBox={setOpenInfoBox}
-                  onClick={() => {
-                    setOpenInfoBox(true);
-                    setLocationInfo({
-                      id: ev.id,
-                      title: ev.title,
-                      lat: ev.geometries[0].coordinates[1],
-                      lng: ev.geometries[0].coordinates[0],
-                      learn: ev.sources[0].url,
-                    });
-                  }}
-                />
-              );
-            }
+    // if there is a typFilter (and something in the coordinates - this is here to handle a single edge-case I've seen)
+    if (
+      typeFilter &&
+      ev.geometries[0].coordinates[0] &&
+      ev.geometries[0].coordinates[1]
+    ) {
+      // if the typeFilter has same value as the category id
+      if (typeFilter == ev.categories[0].id) {
+        // add properties to LocationMarker
+        return (
+          <LocationMarker
+            key={ev.id}
+            evId={ev.categories[0].id}
+            lat={ev.geometries[0].coordinates[1]}
+            lng={ev.geometries[0].coordinates[0]}
+            title={ev.title}
+            typeFilter={typeFilter}
+            checkIds={checkIds}
+            openInfoBox={openInfoBox}
+            setOpenInfoBox={setOpenInfoBox}
+            onClick={() => {
+              setOpenInfoBox(true);
+              setLocationInfo({
+                id: ev.id,
+                title: ev.title,
+                lat: ev.geometries[0].coordinates[1],
+                lng: ev.geometries[0].coordinates[0],
+                learn: ev.sources[0].url,
+              });
+            }}
+          />
+        );
+      }
+      // if no typeFilter then create marker for all events
+    } else if (
+      ev.geometries[0].coordinates[0] &&
+      ev.geometries[0].coordinates[1]
+    ) {
+      return (
+        <LocationMarker
+          key={ev.id}
+          evId={ev.categories[0].id}
+          lat={ev.geometries[0].coordinates[1]}
+          lng={ev.geometries[0].coordinates[0]}
+          title={ev.title}
+          typeFilter={typeFilter}
+          checkIds={checkIds}
+          openInfoBox={openInfoBox}
+          setOpenInfoBox={setOpenInfoBox}
+          onClick={() => {
+            setOpenInfoBox(true);
+            setLocationInfo({
+              id: ev.id,
+              title: ev.title,
+              lat: ev.geometries[0].coordinates[1],
+              lng: ev.geometries[0].coordinates[0],
+              learn: ev.sources[0].url,
+            });
+          }}
+        />
+      );
+    }
 
-
-
-
-
-        } else if (ev.geometries[0].coordinates[0] && ev.geometries[0].coordinates[1]) {
-
-          return (
-            <LocationMarker
-              key={ev.id}
-              evId={ev.categories[0].id}
-              lat={ev.geometries[0].coordinates[1]}
-              lng={ev.geometries[0].coordinates[0]}
-              title={ev.title}
-              typeFilter={typeFilter}
-              checkIds={checkIds}
-              openInfoBox={openInfoBox}
-              setOpenInfoBox={setOpenInfoBox}
-              onClick={() => {
-                setOpenInfoBox(true);
-                setLocationInfo({
-                  id: ev.id,
-                  title: ev.title,
-                  lat: ev.geometries[0].coordinates[1],
-                  lng: ev.geometries[0].coordinates[0],
-                  learn: ev.sources[0].url,
-                });
-              }}
-            />
-          );
-
-        }
-        // if ((typeFilter == (ev.categories[0].id)) && (ev.geometries[0].coordinates[0] && ev.geometries[0].coordinates[1]))
-        // // if (ev.geometries[0].coordinates[0] && ev.geometries[0].coordinates[1]) 
-        // {
-        //   return (
-        //     <LocationMarker
-        //       key={ev.id}
-        //       evId={ev.categories[0].id}
-        //       lat={ev.geometries[0].coordinates[1]}
-        //       lng={ev.geometries[0].coordinates[0]}
-        //       title={ev.title}
-        //       typeFilter={typeFilter}
-        //       checkIds={checkIds}
-        //       openInfoBox={openInfoBox}
-        //       setOpenInfoBox={setOpenInfoBox}
-        //       onClick={() => {
-        //         setOpenInfoBox(true);
-        //         setLocationInfo({
-        //           id: ev.id,
-        //           title: ev.title,
-        //           lat: ev.geometries[0].coordinates[1],
-        //           lng: ev.geometries[0].coordinates[0],
-        //           learn: ev.sources[0].url,
-        //         });
-        //       }}
-        //     />
-        //   );
-        // }
     return null;
   });
   //if locationInfo is not null and openInfoBox is true, then show LocationInfoBox

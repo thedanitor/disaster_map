@@ -37,13 +37,10 @@ const LocationInfoBox = ({ info, setOpenInfoBox }) => {
         <li>
           LONGITUDE: <strong>{longitude}</strong>
         </li>
-        {/* <li> */}
         <a href={info.learn} target="_blank" rel="noreferrer">
           Find out more
         </a>
-        {/* </li> */}
       </ul>
-      
     </div>
   );
 };

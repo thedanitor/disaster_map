@@ -1,13 +1,9 @@
-import React from 'react'
+const DisasterButtons = ({ name, id, handleSelectClick }) => {
+  return (
+    <button className="disaster-button" onClick={handleSelectClick} value={id}>
+      {name}
+    </button>
+  );
+};
 
-const DisasterButtons = ({ name, id, catId, handleSelectClick }) => {
-
-
-    return (
-        <button onClick={handleSelectClick} value={id} >
-            {name} 
-        </button>
-    )
-}
-
-export default DisasterButtons
+export default DisasterButtons;
