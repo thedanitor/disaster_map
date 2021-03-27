@@ -206,7 +206,6 @@ color: teal;
   align-items: center;
   padding: 10px;
   background: linear-gradient(to right, rgb(241, 39, 17), rgb(245, 175, 25));
-  
   color: #eee;
   position: fixed;
   top: 75px;
@@ -214,7 +213,32 @@ color: teal;
   box-shadow: 5px 5px 20px rgba(243, 112, 21, 0.8), 7px 7px 25px rgba(44, 83, 100, 0.8);
   z-index: 50;
   border-radius: 10px;
-  
+
+  background-size: 150% 150%;
+  animation: gradient 5s ease infinite;
+}
+
+.disaster-button {
+  background-color: transparent;
+  color: yellow;
+  cursor: pointer;
+  width: 200px;
+  height: 32px;
+  font-size: 16px;
+  border: 2px solid yellow;
+  margin: 10px 10px 0;
+  /* transition: all 0.3s; */
+}
+
+.disaster-button:hover {
+  color: purple;
+  border-color: purple;
+}
+
+.disaster-button:focus {
+  outline: none;
+  color: purple;
+  border-color: purple;
 }
 
 @keyframes gradient {

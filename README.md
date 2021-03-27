@@ -19,6 +19,12 @@ https://eonet.sci.gsfc.nasa.gov/docs/v3
 
 https://1stwebdesigner.com/15-css-background-effects/
 
+TODO:
+
+-Add minimize button to selector
+-Decide global font?
+-Decide hover color changes, buttons, links, icons?
+-Footer
 
 
 
