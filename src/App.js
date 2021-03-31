@@ -7,17 +7,40 @@ import DisasterSelector from "./components/DisasterSelector";
 function App() {
   const [eventData, setEventData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [typeFilter, setTypeFilter] = useState();
+  const [typesArr, setTypesArr] = useState(["all"]);
 
   // handles disaster selector buttons
   const handleSelectClick = e => {
-    setTypeFilter(e.target.value);
+    // if button value is "all", set typeArr to ["all"]
+    if (e.target.value === "all") {
+      setTypesArr(["all"]);
+      // if value is already in array, remove it
+    } else if (typesArr.includes(e.target.value)) {
+      removeFromTypesArr(e);
+      // otherwise add value to array
+    } else {
+      addToTypesArr(e);
+    }
+  };
+  // add value to typesArr
+  const addToTypesArr = e => {
+    // remove "all" from array
+    setTypesArr(typesArr.filter(e => e !== "all"));
+    // add button value to array
+    setTypesArr(typesArr => [...typesArr, e.target.value]);
+  };
+  // remove value to typesArr
+  const removeFromTypesArr = e => {
+    // filter out button value from array
+    let type = e.target.value;
+    setTypesArr(typesArr.filter(e => e !== type));
   };
 
   // on page load
   useEffect(() => {
     const fetchEvents = async () => {
       setLoading(true);
+      setTypesArr(["all"]);
       // fetch data from API
       const res = await fetch(
         "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events"
@@ -41,7 +64,7 @@ function App() {
         <Map
           eventData={eventData}
           handleSelectClick={handleSelectClick}
-          typeFilter={typeFilter}
+          typesArr={typesArr}
         />
       ) : (
         <Loader />

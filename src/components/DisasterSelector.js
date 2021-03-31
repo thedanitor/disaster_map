@@ -18,7 +18,7 @@ const DisasterSelector = ({ handleSelectClick }) => {
     <div className="selector">
       <h3>Filter by</h3>
       {/* Button for all disasters, sets typeFilter to blank */}
-      <button className="disaster-button" onClick={handleSelectClick} value="">
+      <button className="disaster-button" onClick={handleSelectClick} value="all">
         All Disasters
       </button>
       {disasterButtons}
