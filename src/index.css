@@ -213,9 +213,14 @@ color: teal;
   box-shadow: 5px 5px 20px rgba(243, 112, 21, 0.8), 7px 7px 25px rgba(44, 83, 100, 0.8);
   z-index: 50;
   border-radius: 10px;
-
   background-size: 150% 150%;
   animation: gradient 5s ease infinite;
+}
+
+.selector.minimize {
+  height: 50px;
+  width: 220px;
+  overflow: hidden;
 }
 
 .disaster-button {
@@ -239,6 +244,17 @@ color: teal;
   outline: none;
   color: purple;
   border-color: purple;
+}
+
+.minimize-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+  border: 2px solid yellow;
+  margin: 10px 10px 0;
 }
 
 @keyframes gradient {
