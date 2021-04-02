@@ -64,43 +64,6 @@ body {
   position: relative;
 }
 
-/* ICONS */
-.location-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-}
-.location-icon.drought {
-  color: tan;
-}
-.location-icon.fire {
-  color: crimson;
-}
-.location-icon.flood {
-  color: midnightblue;
-}
-.location-icon.storm {
-  color: yellow;
-}
-.location-icon.volcano {
-  color: maroon;
-}
-.location-icon.water-color {
-  color: teal;
-}
-.location-icon.earthquake {
-  color: black;
-}
-.location-icon.snow {
-  color: cornflowerblue;
-}
-.location-icon.temperature {
-  color: orangered;
-}
-.location-icon:hover {
-  color: #222;
-  filter: brightness(2);
-}
 
 /* LOADER  */
 .loader {
@@ -271,6 +234,7 @@ body {
   font-size: 16px;
   border: 2px solid yellow;
   margin: 10px 10px 0;
+  position: relative;
   /* transition: all 0.3s; */
 }
 
@@ -283,6 +247,12 @@ body {
   outline: none;
   color: purple;
   border-color: purple;
+}
+
+.disaster-button span {
+  position: absolute;
+  right: 5px;
+  top: 2px;
 }
 
 .minimize-btn {
@@ -324,4 +294,48 @@ body {
 
 .disaster-label {
   text-align: start;
+}
+
+/* ICONS */
+.location-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+.location-icon.drought {
+  color: tan;
+}
+.location-icon.dust {
+  color: slategray;
+}
+.location-icon.fire {
+  color: crimson;
+}
+.location-icon.flood {
+  color: midnightblue;
+}
+.location-icon.storm {
+  color: yellow;
+}
+.location-icon.volcano {
+  color: maroon;
+}
+.location-icon.water-color {
+  color: teal;
+}
+.location-icon.earthquake {
+  color: black;
+}
+.location-icon.snow {
+  color: cornflowerblue;
+}
+.location-icon.temperature {
+  color: orangered;
+}
+.location-icon.other {
+  color: black;
+}
+.location-icon:hover {
+  color: #222;
+  filter: brightness(2);
 }

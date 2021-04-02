@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Icon } from "@iconify/react";
+import exclamationIcon from "@iconify-icons/bi/exclamation-triangle-fill";
 import disasterTypes from "../utils/DisasterTypes";
 import DisasterButtons from "./DisasterButtons";
 
@@ -16,6 +18,8 @@ const DisasterSelector = ({ handleSelectClick }) => {
       <DisasterButtons
         key={disaster.id}
         name={disaster.name}
+        iconType={disaster.iconType}
+        iconClass={disaster.iconClass}
         handleSelectClick={handleSelectClick}
         id={disaster.id}
       />
@@ -34,7 +38,7 @@ const DisasterSelector = ({ handleSelectClick }) => {
         onClick={handleSelectClick}
         value="all"
       >
-        All Disasters
+        All Disasters<span><Icon icon={exclamationIcon} className="location-icon other"/></span>
       </button>
       {disasterButtons}
       {/* Button for clear disasters, sets typesArr to [""] */}
