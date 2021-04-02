@@ -29,18 +29,19 @@ const LocationInfoBox = ({ info, setOpenInfoBox }) => {
       </h2>
       <ul>
         <li>
-          ID: <strong>{info.id}</strong>
+          ID: <span classname="location-box-info">{info.id}</span>
         </li>
         <li>
-          LATITUDE: <strong>{latitude}</strong>
+          LATITUDE: <span classname="location-box-info">{latitude}</span>
         </li>
         <li>
-          LONGITUDE: <strong>{longitude}</strong>
+          LONGITUDE: <span classname="location-box-info">{longitude}</span>
         </li>
-        <a href={info.learn} target="_blank" rel="noreferrer">
+        
+      </ul>
+      <a href={info.learn} target="_blank" rel="noreferrer">
           Find out more
         </a>
-      </ul>
     </div>
   );
 };

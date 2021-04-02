@@ -1,6 +1,16 @@
+@font-face {
+  font-family: "Nasa";
+  src: url("./assets/fonts/Nasa.woff2") format("woff2"),
+    url("./assets/fonts/Nasa.woff") format("woff"),
+    url("./assets/fonts/Nasa.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Nasa", Helvetica, sans-serif;
   overflow: hidden;
 }
 /* HEADER */
@@ -15,12 +25,11 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  box-shadow: 0 5px 20px rgba(243, 112, 21, 0.8), 0 7px 25px rgba(44, 83, 100, 0.8);
+  box-shadow: 0 5px 20px rgba(243, 112, 21, 0.8),
+    0 7px 25px rgba(44, 83, 100, 0.8);
   z-index: 100;
-
   background-size: 150% 120%;
   animation: gradient 5s ease infinite;
-
 }
 
 .header h1 {
@@ -28,6 +37,7 @@ body {
   padding: 0;
   margin: 0 100px 0 0;
   text-align: center;
+  letter-spacing: 0.1em;
 }
 
 .header span {
@@ -39,8 +49,8 @@ body {
   position: absolute;
   right: 100px;
   display: inline-block;
- height: 3rem;
- width: 3rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 /* MAP  */
@@ -67,7 +77,7 @@ body {
   color: crimson;
 }
 .location-icon.flood {
-color: midnightblue;
+  color: midnightblue;
 }
 .location-icon.storm {
   color: yellow;
@@ -76,7 +86,7 @@ color: midnightblue;
   color: maroon;
 }
 .location-icon.water-color {
-color: teal;
+  color: teal;
 }
 .location-icon.earthquake {
   color: black;
@@ -115,16 +125,29 @@ color: teal;
   left: calc(50vw - 150px);
   width: 300px;
   min-height: 200px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(to right, rgba(241, 39, 17, 0.8), rgba(245, 175, 25, 0.8));
-  box-shadow:  5px 5px 20px rgba(243, 112, 21, 0.8), 7px 7px 25px rgba(44, 83, 100, 0.8);
+  background: linear-gradient(
+    to right,
+    rgba(241, 39, 17, 0.8),
+    rgba(245, 175, 25, 0.8)
+  );
+  box-shadow: 5px 5px 20px rgba(243, 112, 21, 0.8),
+    7px 7px 25px rgba(44, 83, 100, 0.8);
   border-radius: 10px;
   color: #fff;
   z-index: 10;
   background-size: 150% 150%;
   animation: gradient 5s ease infinite;
+  letter-spacing: 0.1em;
+}
+
+.location-info h2 {
+  justify-content: center;
+  align-items: center;
 }
 
 .location-info ul {
@@ -136,15 +159,23 @@ color: teal;
   padding: 5px 0;
 }
 
+.location-info span {
+  color: yellow;
+}
+
 .location-info a {
-  display: block;
+  display: flex;
   text-decoration: none;
   color: yellow;
   cursor: pointer;
-  padding: 5px 90px;
   border: 2px solid yellow;
-  margin-top: 10px;
-  transition: all 0.3s ease-in;
+  margin: 0 auto;
+  transition: all 0.3s ease-in; 
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 32px;
+  font-size: 16px;
 }
 
 .location-info a:hover {
@@ -154,6 +185,7 @@ color: teal;
 
 .location-info .close-icon {
   position: absolute;
+  top: 20px;
   right: 20px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -177,7 +209,11 @@ color: teal;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(to right, rgba(241, 39, 17, 0.8), rgba(245, 175, 25, 0.8));
+  background: linear-gradient(
+    to right,
+    rgba(241, 39, 17, 0.8),
+    rgba(245, 175, 25, 0.8)
+  );
   color: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -210,11 +246,13 @@ color: teal;
   position: fixed;
   top: 75px;
   left: 10px;
-  box-shadow: 5px 5px 20px rgba(243, 112, 21, 0.8), 7px 7px 25px rgba(44, 83, 100, 0.8);
+  box-shadow: 5px 5px 20px rgba(243, 112, 21, 0.8),
+    7px 7px 25px rgba(44, 83, 100, 0.8);
   z-index: 50;
   border-radius: 10px;
   background-size: 150% 150%;
   animation: gradient 5s ease infinite;
+  letter-spacing: 0.1em;
 }
 
 .selector.minimize {
@@ -224,6 +262,7 @@ color: teal;
 }
 
 .disaster-button {
+  font-family: inherit;
   background-color: transparent;
   color: yellow;
   cursor: pointer;
@@ -259,14 +298,14 @@ color: teal;
 
 @keyframes gradient {
   0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .disasters {

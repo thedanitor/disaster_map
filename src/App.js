@@ -11,9 +11,12 @@ function App() {
 
   // handles disaster selector buttons
   const handleSelectClick = e => {
-    // if button value is "all", set typeArr to ["all"]
+    // if button value is "all", set typesArr to ["all"]
     if (e.target.value === "all") {
       setTypesArr(["all"]);
+      // if value is "", set typesArr to [""]
+    } else if (e.target.value === "") {
+      setTypesArr([""]);
       // if value is already in array, remove it
     } else if (typesArr.includes(e.target.value)) {
       removeFromTypesArr(e);
