@@ -1,8 +1,8 @@
 import { Icon } from "@iconify/react";
 import exclamationIcon from "@iconify-icons/bi/exclamation-triangle-fill";
 import droughtIcon from "@iconify-icons/mdi/water-off-outline";
-import dustHazeIcon from '@iconify-icons/fluent/weather-haze-20-regular';
-import fireIcon from '@iconify-icons/icomoon-free/fire';
+import dustHazeIcon from "@iconify-icons/fluent/weather-haze-20-regular";
+import fireIcon from "@iconify-icons/icomoon-free/fire";
 import floodIcon from "@iconify-icons/bi/water";
 import stormIcon from "@iconify-icons/bi/tropical-storm";
 import volcanoIcon from "@iconify-icons/maki/volcano-11";
