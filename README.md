@@ -33,7 +33,8 @@ Go to https://thedanitor.github.io/disaster_map/ in your browser and wait for th
 Drag the map and zoom out to move to different parts of the world.\
 Hover over an icon to see the name and location of the disaster.\
 Click on the icon for more information and click the Find Out More button to be taken to an external site with more information.\
-Click on a disaster type in the filter box to see disasters of that type.\
+See disasters of a single type or multiple types by clicking on the disaster type name(s) in the filter box.\
+
 
 ![Disaster Map Demo](src/assets/images/disaster_map_demo.gif)
 
