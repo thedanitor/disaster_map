@@ -24,6 +24,7 @@ What started out as a fire tracker app turned into a map of all current disaster
 * CSS
 * HTML
 * NASA EONET API
+* Google Maps API
 * Iconify
 
 ## Usage
