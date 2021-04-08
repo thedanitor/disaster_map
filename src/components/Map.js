@@ -50,8 +50,8 @@ const Map = ({ eventData, center, zoom, checkIds, typesArr }) => {
           <LocationMarker
             key={ev.id}
             evId={ev.categories[0].id}
-            lat={ev.geometries[0].coordinates[1].toFixed(2)}
-            lng={ev.geometries[0].coordinates[0].toFixed(2)}
+            lat={ev.geometries[0].coordinates[1]}
+            lng={ev.geometries[0].coordinates[0]}
             title={ev.title}
             typesArr={typesArr}
             checkIds={checkIds}
