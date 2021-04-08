@@ -21,9 +21,7 @@ https://1stwebdesigner.com/15-css-background-effects/
 
 TODO:
 
--Add minimize button to selector
--Decide global font?
--Decide hover color changes, buttons, links, icons?
+-parse lat long to 2 decimals
 -Footer
 
 

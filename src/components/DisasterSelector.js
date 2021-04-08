@@ -6,11 +6,13 @@ import DisasterButtons from "./DisasterButtons";
 
 const DisasterSelector = ({ handleSelectClick }) => {
   const [minimize, setMinimize] = useState("selector");
+  const [minButtonChar, setMinButtonChar] = useState("-");
   // toggles minimize class on selector
   const handleMinimize = () => {
     minimize === "selector"
       ? setMinimize("selector minimize")
       : setMinimize("selector");
+    minButtonChar === "-" ? setMinButtonChar("+") : setMinButtonChar("-");
   };
   // map buttons for each disasterType to DisasterButtons
   const disasterButtons = disasterTypes.map(disaster => {
@@ -29,7 +31,7 @@ const DisasterSelector = ({ handleSelectClick }) => {
   return (
     <div className={minimize}>
       <button className="disaster-button minimize-btn" onClick={handleMinimize}>
-        -
+        {minButtonChar}
       </button>
       <h3>Filter by</h3>
       {/* Button for all disasters, sets typesArr to ["all"] */}
