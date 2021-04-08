@@ -21,8 +21,7 @@ https://1stwebdesigner.com/15-css-background-effects/
 
 TODO:
 
--parse lat long to 2 decimals
--Footer
+README
 
 
 

@@ -2,8 +2,8 @@ import { Icon } from "@iconify/react";
 import closeCircle from "@iconify-icons/mdi/close-circle";
 
 const LocationInfoBox = ({ info, setOpenInfoBox }) => {
-  let latitude = info.lat;
-  let longitude = info.lng;
+  let latitude = info.lat.toFixed(2);
+  let longitude = info.lng.toFixed(2);
   // change latitude to S or N
   if (latitude < 0) {
     latitude = latitude * -1 + " °S";

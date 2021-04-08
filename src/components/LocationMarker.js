@@ -16,8 +16,8 @@ import temperatureIcon from "@iconify-icons/bi/thermometer-high";
 const LocationMarker = ({ evId, lat, lng, title, onClick }) => {
   let iconType;
   let iconName;
-  let latitude = lat;
-  let longitude = lng;
+  let latitude = lat.toFixed(2);
+  let longitude = lng.toFixed(2);
 
   // change latitude to S or N
   if (latitude < 0) {
