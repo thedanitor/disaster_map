@@ -1,6 +1,6 @@
 // import exclamationIcon from "@iconify-icons/bi/exclamation-triangle-fill";
 import droughtIcon from "@iconify-icons/mdi/water-off-outline";
-import dustHazeIcon from "@iconify-icons/bi/cloud-haze-fill";
+// import dustHazeIcon from "@iconify-icons/bi/cloud-haze-fill";
 import fireIcon from '@iconify-icons/icomoon-free/fire';
 import floodIcon from "@iconify-icons/bi/water";
 import stormIcon from "@iconify-icons/bi/tropical-storm";
@@ -20,7 +20,7 @@ function DisasterTypes(name, id, iconType, iconClass ) {
 }
 
 const drought = new DisasterTypes("Drought", 6, droughtIcon, "location-icon drought");
-const dustHaze = new DisasterTypes("Dust and Haze", 7, dustHazeIcon, "location-icon dust");
+// const dustHaze = new DisasterTypes("Dust and Haze", 7, dustHazeIcon, "location-icon dust");
 const wildfires = new DisasterTypes("Wildfires", 8, fireIcon, "location-icon fire");
 const floods = new DisasterTypes("Floods", 9, floodIcon, "location-icon flood");
 const severeStorms = new DisasterTypes("Severe Storms", 10, stormIcon, "location-icon storm");
@@ -34,7 +34,7 @@ const tempExtremes = new DisasterTypes("Extreme Temp", 18, temperatureIcon, "loc
 
 let disasterTypes = [
   drought,
-  dustHaze,
+  // dustHaze,
   wildfires,
   floods,
   severeStorms,
