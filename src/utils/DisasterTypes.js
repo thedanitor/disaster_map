@@ -1,6 +1,6 @@
 // import exclamationIcon from "@iconify-icons/bi/exclamation-triangle-fill";
 import droughtIcon from "@iconify-icons/mdi/water-off-outline";
-import dustHazeIcon from '@iconify-icons/fluent/weather-haze-20-regular';
+import dustHazeIcon from "@iconify-icons/fluent/weather-haze-24-filled";
 import fireIcon from '@iconify-icons/icomoon-free/fire';
 import floodIcon from "@iconify-icons/bi/water";
 import stormIcon from "@iconify-icons/bi/tropical-storm";
