@@ -4,7 +4,6 @@ import Loader from "./components/Loader";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import DisasterSelector from "./components/DisasterSelector";
-// import DisasterSelectorNoIcon from "./components/DisasterSelectorNoIcon";
 
 function App() {
   const [eventData, setEventData] = useState([]);
@@ -64,7 +63,6 @@ function App() {
     <div>
       <Header />
       <DisasterSelector handleSelectClick={handleSelectClick} />
-      {/* <DisasterSelectorNoIcon handleSelectClick={handleSelectClick} /> */}
       {/* if loading is false, display Map, otherwise display Loader */}
       {!loading ? (
         <Map
