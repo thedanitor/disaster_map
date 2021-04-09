@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import exclamationIcon from "@iconify-icons/bi/exclamation-triangle-fill";
 import droughtIcon from "@iconify-icons/mdi/water-off-outline";
-// import dustHazeIcon from "@iconify-icons/bi/cloud-haze-fill";
+import dustHazeIcon from "@iconify-icons/bi/cloud-haze-fill";
 import fireIcon from "@iconify-icons/icomoon-free/fire";
 import floodIcon from "@iconify-icons/bi/water";
 import stormIcon from "@iconify-icons/bi/tropical-storm";
@@ -38,10 +38,10 @@ const LocationMarker = ({ evId, lat, lng, title, onClick }) => {
       iconType = droughtIcon;
       iconName = "location-icon drought";
       break;
-    // case 7:
-    //   iconType = dustHazeIcon;
-    //   iconName = "location-icon dust";
-    //   break;
+    case 7:
+      iconType = dustHazeIcon;
+      iconName = "location-icon dust";
+      break;
     case 8:
       iconType = fireIcon;
       iconName = "location-icon fire";

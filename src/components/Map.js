@@ -1,9 +1,9 @@
 import { useState } from "react";
 import GoogleMapReact from "google-map-react";
-// import LocationMarker from "./LocationMarker";
-import LocationMarkerNoIcon from "./LocationMarkerNoIcon";
-// import LocationInfoBox from "./LocationInfoBox";
-import LocationInfoBoxNoIcon from "./LocationInfoBoxNoIcon";
+import LocationMarker from "./LocationMarker";
+// import LocationMarkerNoIcon from "./LocationMarkerNoIcon";
+import LocationInfoBox from "./LocationInfoBox";
+// import LocationInfoBoxNoIcon from "./LocationInfoBoxNoIcon";
 
 const Map = ({ eventData, center, zoom, checkIds, typesArr }) => {
   const [locationInfo, setLocationInfo] = useState(null);
@@ -19,7 +19,7 @@ const Map = ({ eventData, center, zoom, checkIds, typesArr }) => {
     ) {
       return (
         // add properties to LocationMarker
-        <LocationMarkerNoIcon
+        <LocationMarker
           key={ev.id}
           evId={ev.categories[0].id}
           lat={ev.geometries[0].coordinates[1]}
@@ -49,7 +49,7 @@ const Map = ({ eventData, center, zoom, checkIds, typesArr }) => {
       if (typesArr.includes(ev.categories[0].id.toString())) {
         // add properties to LocationMarker
         return (
-          <LocationMarkerNoIcon
+          <LocationMarker
             key={ev.id}
             evId={ev.categories[0].id}
             lat={ev.geometries[0].coordinates[1]}
@@ -79,7 +79,7 @@ const Map = ({ eventData, center, zoom, checkIds, typesArr }) => {
   //if locationInfo is not null and openInfoBox is true, then show LocationInfoBox
   const locationBox =
     locationInfo && openInfoBox ? (
-      <LocationInfoBoxNoIcon
+      <LocationInfoBox
         info={locationInfo}
         openInfoBox={openInfoBox}
         setOpenInfoBox={setOpenInfoBox}

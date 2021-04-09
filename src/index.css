@@ -249,19 +249,19 @@ body {
   border-color: #0967f5;
 }
 
-/* .disaster-button span {
-  position: absolute;
-  right: 3px;
-  top: 2px;
-} */
-
-
-/* **********************IF NO ICONS *************************** */
 .disaster-button span {
   position: absolute;
   right: 3px;
-  top: 20px;
+  top: 2px;
 }
+
+
+/* **********************IF NO ICONS *************************** */
+/* .disaster-button span {
+  position: absolute;
+  right: 3px;
+  top: 20px;
+} */
 
 .minimize-btn {
   position: absolute;
@@ -328,20 +328,20 @@ body {
 
 /* ICONS */
 
-/* .location-icon {
+.location-icon {
   font-size: 1.5rem;
   cursor: pointer;
   transform: translate(-50%, -50%);
-} */
+}
 
 /* **********************IF NO ICONS *************************** */
-.location-icon {
+/* .location-icon {
   font-family: Helvetica, sans-serif;
   font-weight: bolder;
   font-size: 2rem;
   cursor: pointer;
   transform: translate(-50%, -50%);
-}
+} */
 .location-icon.drought {
   color: tan;
 }

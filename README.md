@@ -2,7 +2,7 @@
 
 World map of current natural disasters using NASA's EONET API.
 
-Deployed: https://thedanitor.github.io/disaster_map/
+Deployed: https://disaster-map-dmw.herokuapp.com/
 
 ![Disaster Map Screenshot](src/assets/images/disaster_map_screenshot.png)
 
