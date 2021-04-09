@@ -1,6 +1,7 @@
 import { useState } from "react";
 import GoogleMapReact from "google-map-react";
-import LocationMarker from "./LocationMarker";
+// import LocationMarker from "./LocationMarker";
+import LocationMarkerNoIcon from "./LocationMarkerNoIcon";
 import LocationInfoBox from "./LocationInfoBox";
 
 const Map = ({ eventData, center, zoom, checkIds, typesArr }) => {
@@ -17,7 +18,7 @@ const Map = ({ eventData, center, zoom, checkIds, typesArr }) => {
     ) {
       return (
         // add properties to LocationMarker
-        <LocationMarker
+        <LocationMarkerNoIcon
           key={ev.id}
           evId={ev.categories[0].id}
           lat={ev.geometries[0].coordinates[1]}
@@ -47,7 +48,7 @@ const Map = ({ eventData, center, zoom, checkIds, typesArr }) => {
       if (typesArr.includes(ev.categories[0].id.toString())) {
         // add properties to LocationMarker
         return (
-          <LocationMarker
+          <LocationMarkerNoIcon
             key={ev.id}
             evId={ev.categories[0].id}
             lat={ev.geometries[0].coordinates[1]}

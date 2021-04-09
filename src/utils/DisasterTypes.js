@@ -1,4 +1,3 @@
-// import exclamationIcon from "@iconify-icons/bi/exclamation-triangle-fill";
 import droughtIcon from "@iconify-icons/mdi/water-off-outline";
 // import dustHazeIcon from "@iconify-icons/bi/cloud-haze-fill";
 import fireIcon from '@iconify-icons/icomoon-free/fire';
